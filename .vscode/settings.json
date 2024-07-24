@@ -1,3 +1,5 @@
 {
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
+    "typescript.format.semicolons": "remove",
+    "css.lint.unknownAtRules": "ignore"
 }
