@@ -1,4 +1,4 @@
-jest.mock("../../supabase/client", () => {
+jest.mock("../db/client", () => {
     const single = jest.fn(() => ({ data: { id: "123", first_name: "John", last_name: "Doe" } }))
     const select = jest.fn(() => ({ single }))
     const insert = jest.fn(() => ({ select }))

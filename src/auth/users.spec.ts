@@ -1,4 +1,4 @@
-jest.mock("../../supabase/client", () => {
+jest.mock("../db/client", () => {
     const getUser = jest.fn()
     const auth = { getUser }
     const client = { auth }
