@@ -2,7 +2,8 @@
 Supatemplate is a starter template integrating Supabase, React, Next.js, Tailwind CSS, Jest, and TypeScript, providing a solid foundation for building modern web applications.
 
 ## Getting Started
-Clone the Repository
+
+### Clone the Repository
 First, clone the repository and navigate into the project directory:
 
 ```bash
