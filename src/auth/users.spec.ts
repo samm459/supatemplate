@@ -6,7 +6,7 @@ jest.mock("../../supabase/client", () => {
 })
 
 import { getCurrentUser } from "./users"
-import { client } from "../../supabase/client"
+import { client } from "../db/client"
 
 describe("getCurrentUser", () => {
     it("returns the current user", async () => {

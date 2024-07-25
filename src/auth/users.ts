@@ -1,6 +1,6 @@
 import { AuthUser } from "@supabase/supabase-js"
 import { Result, AuthError, error, ok } from "../lib/result"
-import { client } from "../../supabase/client"
+import { client } from "../db/client"
 
 export type User = AuthUser
 
