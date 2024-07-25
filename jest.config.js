@@ -4,6 +4,8 @@ module.exports = {
   transform: {
     "^.+.tsx?$": ["ts-jest", {}],
   },
+  preset: 'ts-jest/presets/default-esm',
   setupFilesAfterEnv: ["<rootDir>/test/setup.ts"],
   rootDir: "./",
+  testPathIgnorePatterns: ['./.next', './node_modules', './dist'],
 };
