@@ -1,4 +1,4 @@
-# Supatemplate
+# supatemplate
 Supatemplate is a starter template integrating Supabase, React, Next.js, Tailwind CSS, Jest, and TypeScript, providing a solid foundation for building modern web applications.
 
 ## Getting Started
