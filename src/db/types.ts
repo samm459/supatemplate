@@ -34,23 +34,62 @@ export type Database = {
   }
   public: {
     Tables: {
+      memberships: {
+        Row: {
+          created_at: string
+          id: string
+          organization_id: string
+          role: Database["public"]["Enums"]["role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          organization_id: string
+          role?: Database["public"]["Enums"]["role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          organization_id?: string
+          role?: Database["public"]["Enums"]["role"]
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "memberships_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "memberships_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       organizations: {
         Row: {
           created_at: string
-          created_by: string | null
-          id: number
+          created_by: string
+          id: string
           name: string
         }
         Insert: {
           created_at?: string
-          created_by?: string | null
-          id?: number
+          created_by?: string
+          id?: string
           name: string
         }
         Update: {
           created_at?: string
-          created_by?: string | null
-          id?: number
+          created_by?: string
+          id?: string
           name?: string
         }
         Relationships: [
@@ -65,24 +104,27 @@ export type Database = {
       }
       profiles: {
         Row: {
+          admin: boolean
           created_at: string
-          first_name: string | null
-          id: number
-          last_name: string | null
+          first_name: string
+          id: string
+          last_name: string
           user_id: string
         }
         Insert: {
+          admin?: boolean
           created_at?: string
-          first_name?: string | null
-          id?: number
-          last_name?: string | null
+          first_name: string
+          id?: string
+          last_name: string
           user_id?: string
         }
         Update: {
+          admin?: boolean
           created_at?: string
-          first_name?: string | null
-          id?: number
-          last_name?: string | null
+          first_name?: string
+          id?: string
+          last_name?: string
           user_id?: string
         }
         Relationships: [
@@ -103,7 +145,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      role: "owner" | "manager" | "default" | "restricted"
     }
     CompositeTypes: {
       [_ in never]: never
