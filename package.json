@@ -10,7 +10,7 @@
         "test": "jest",
         "supabase:diff": "npx supabase db diff --file",
         "supabase:types": "npx supabase gen types typescript --local > src/db/types.ts",
-        "supabase:migrate": "npx supabase db reset && npx supabase db migrate"
+        "supabase:reset": "npx supabase db reset"
     },
     "dependencies": {
         "@supabase/supabase-js": "^2.44.4",

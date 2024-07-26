@@ -34,6 +34,35 @@ export type Database = {
   }
   public: {
     Tables: {
+      organizations: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: number
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: number
+          name: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: number
+          name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organizations_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
